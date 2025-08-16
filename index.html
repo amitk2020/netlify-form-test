@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form - Netlify</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+        }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Contact Us</h1>
+
+    <form name="contact" method="POST" data-netlify="true">
+        <!-- Netlify required hidden input -->
+        <input type="hidden" name="form-name" value="contact">
+
+        <p>
+            <label>
+                Name:<br>
+                <input type="text" name="name" required>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                Email:<br>
+                <input type="email" name="email" required>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                Message:<br>
+                <textarea name="message" rows="5" required></textarea>
+            </label>
+        </p>
+
+        <p>
+            <button type="submit">Send</button>
+        </p>
+    </form>
+
+</body>
+
+</html>
