@@ -78,7 +78,8 @@
 <body>
     <div class="form-container">
         <h2>Make a Reservation</h2>
-        <form id="reservation-form" name="reservation" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <form id="reservation-form" name="reservation" method="POST" data-netlify="true" data-netlify-recaptcha="true"
+            netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="reservation" />
             <p style="display:none">
                 <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
@@ -111,7 +112,7 @@
 
             <label for="message">Special Requests</label>
             <textarea id="message" name="message" rows="3"></textarea>
-
+            <div data-netlify-recaptcha="true"></div>
             <button type="submit">Reserve Now</button>
         </form>
 
