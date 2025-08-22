@@ -68,7 +68,7 @@
 <body>
     <div class="form-container">
         <h2>Make a Reservation</h2>
-        <form name="reservation" netlify>
+        <form name="reservation" method="POST" data-netlify-recaptcha="true" data-netlify="true">
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" required />
 
@@ -96,7 +96,7 @@
 
             <label for="message">Special Requests</label>
             <textarea id="message" name="message" rows="3"></textarea>
-
+            <div data-netlify-recaptcha="true"></div>
             <button type="submit">Reserve Now</button>
         </form>
     </div>
