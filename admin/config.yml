@@ -1,0 +1,33 @@
+# Save this as: admin/config.yml
+
+backend:
+  name: github
+  repo: amitk2020/netlify-form-test # Change this to your GitHub repo
+  branch: main # Change to your default branch if different
+  site_domain: https://fluffy-alfajores-8157dd.netlify.app
+
+# Optional: Use Netlify's OAuth for easier GitHub authentication
+# backend:
+#   name: github
+#   repo: your-username/your-repo-name
+#   branch: main
+#   site_domain: your-site.netlify.app
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "events"
+    label: "Events"
+    folder: "content/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Start Time", name: "startTime", widget: "string", hint: "e.g., 7:00 PM" }
+      - { label: "End Time", name: "endTime", widget: "string", hint: "e.g., 10:00 PM" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Publish", name: "published", widget: "boolean", default: true }
+      - { label: "Featured Event", name: "featured", widget: "boolean", default: false, hint: "Show on homepage" }
