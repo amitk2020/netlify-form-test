@@ -1,17 +1,10 @@
-# Save this as: admin/config.yml
-
 backend:
   name: github
-  repo: amitk2020/netlify-form-test # Change this to your GitHub repo
-  branch: main # Change to your default branch if different
-  site_domain: https://fluffy-alfajores-8157dd.netlify.app
-
-# Optional: Use Netlify's OAuth for easier GitHub authentication
-# backend:
-#   name: github
-#   repo: your-username/your-repo-name
-#   branch: main
-#   site_domain: your-site.netlify.app
+  repo: amitk2020/netlify-form-test
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: oauth
+  site_domain: fluffy-alfajores-8157dd.netlify.app
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"

@@ -1,0 +1,14 @@
+# Netlify configuration for Decap CMS
+
+[build]
+  command = "npm run build"
+  publish = "."
+
+# Redirect rules for single-page app (optional)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# OAuth app configuration for Decap CMS
+# GitHub OAuth is handled through Netlify's OAuth integration
