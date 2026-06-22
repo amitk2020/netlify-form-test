@@ -1,13 +1,9 @@
 backend:
-  name: github
-  repo: amitk2020/netlify-form-test
+  name: git-gateway
   branch: main
-  base_url: https://api.netlify.com
-  auth_endpoint: oauth
-  site_domain: fluffy-alfajores-8157dd.netlify.app
 
-media_folder: "images/uploads" # where uploaded images are stored in your repo
-public_folder: "/images/uploads" # the public path used in your HTML
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 collections:
   - name: "events"
