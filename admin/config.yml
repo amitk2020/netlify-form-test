@@ -6,21 +6,25 @@ backend:
   auth_endpoint: oauth
   site_domain: fluffy-alfajores-8157dd.netlify.app
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+media_folder: "images/uploads" # where uploaded images are stored in your repo
+public_folder: "/images/uploads" # the public path used in your HTML
 
 collections:
   - name: "events"
     label: "Events"
-    folder: "content/events"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
-      - { label: "Start Time", name: "startTime", widget: "string", hint: "e.g., 7:00 PM" }
-      - { label: "End Time", name: "endTime", widget: "string", hint: "e.g., 10:00 PM" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Featured Image", name: "image", widget: "image" }
-      - { label: "Publish", name: "published", widget: "boolean", default: true }
-      - { label: "Featured Event", name: "featured", widget: "boolean", default: false, hint: "Show on homepage" }
+    files:
+      - label: "All Events"
+        name: "all_events"
+        file: "_data/events.json"
+        fields:
+          - label: "Events"
+            name: "events"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "datetime" }
+              - { label: "Start Time", name: "startTime", widget: "string", hint: "e.g. 6:00 PM" }
+              - { label: "End Time", name: "endTime", widget: "string", hint: "e.g. 9:00 PM" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Published", name: "published", widget: "boolean", default: true }

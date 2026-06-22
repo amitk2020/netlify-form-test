@@ -7,6 +7,7 @@
     <title>Savory - Fine Dining Experience</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <style>
         * {
@@ -471,40 +472,25 @@
             });
         }
 
-        // Load events from CMS
         async function loadEvents() {
             const container = document.getElementById('events-container');
 
             try {
-                // Fetch all event files from content/events folder
-                const response = await fetch('/content/events/');
+                const response = await fetch('/_data/events.json');
 
-                // In a real implementation, you'd parse the directory listing
-                // For now, we'll show a fallback message
-                container.innerHTML = `
-                    <div class="col-12">
-                        <div class="no-events">
-                            <p>Events will appear here once you add them through the CMS.</p>
-                            <p>Access the CMS at <a href="/admin" style="color: #667eea;">/admin</a></p>
-                        </div>
-                    </div>
-                `;
+                if (!response.ok) throw new Error('Could not load events');
 
-                // If you're using a build process, you can generate a JSON file
-                // with all events and fetch it here:
-                /*
-                const events = await fetch('/events.json').then(r => r.json());
-                displayEvents(events);
-                */
+                const data = await response.json();
+                displayEvents(data.events);
 
             } catch (error) {
                 container.innerHTML = `
-                    <div class="col-12">
-                        <div class="no-events">
-                            <p>No events available at the moment.</p>
-                        </div>
-                    </div>
-                `;
+            <div class="col-12">
+                <div class="no-events">
+                    <p>No events available at the moment.</p>
+                </div>
+            </div>
+        `;
             }
         }
 
