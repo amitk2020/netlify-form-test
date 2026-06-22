@@ -17,6 +17,15 @@
       "endTime": "9:00pm",
       "description": "Join us for a special evening of live acoustic music, local wines, and delicious food. The perfect way to kick off your weekend in Martinborough.",
       "image": "/images/uploads/photo-1493225457124-a3eb161ffa5f.jpeg"
+    },
+    {
+      "published": true,
+      "title": "Trivia & Tap Night",
+      "description": "Test your knowledge and enjoy cold beers on tap at our monthly trivia night. Teams of up to 6 welcome — prizes for the winners!",
+      "date": "2026-07-26T00:32:00.000+12:00",
+      "startTime": "7:00 PM",
+      "endTime": "11:00 PM",
+      "image": "/images/uploads/photo-1414235077428-338989a2e8c0.jpeg"
     }
   ]
 }
