@@ -494,6 +494,11 @@
         `;
             }
         }
+        // Add this helper at the top of displayEvents
+        const cleanImage = (img) => {
+            const match = img.match(/\(([^)]+)\)/);
+            return match ? match[1] : img;
+        };
 
         function displayEvents(events) {
             const container = document.getElementById('events-container');
@@ -505,9 +510,11 @@
 
             // Sort by date and filter published events
             const upcomingEvents = events
-                .filter(e => e.published && new Date(e.date) >= new Date())
-                .sort((a, b) => new Date(a.date) - new Date(b.date))
-                .slice(0, 4); // Show only 4 events
+                .filter(e => {
+                    const eventDay = new Date(e.date);
+                    eventDay.setHours(23, 59, 59); // include events happening today
+                    return e.published && eventDay >= new Date();
+                })
 
             if (upcomingEvents.length === 0) {
                 container.innerHTML = '<div class="col-12"><div class="no-events">No upcoming events at the moment.</div></div>';
@@ -523,7 +530,7 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="event-card">
                             <div class="event-image">
-                                <img src="${event.image}" alt="${event.title}">
+                                <img src="${cleanImage(event.image)}" alt="${event.title}">
                                 <div class="event-date">
                                     <div class="date-number">${day}</div>
                                     <div class="date-month">${month}</div>
