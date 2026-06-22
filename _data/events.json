@@ -26,6 +26,15 @@
       "startTime": "7:00 PM",
       "endTime": "11:00 PM",
       "image": "/images/uploads/photo-1414235077428-338989a2e8c0.jpeg"
+    },
+    {
+      "published": true,
+      "title": "Drive Band",
+      "date": "2026-06-30T01:04:00.000+12:00",
+      "startTime": "6:00 PM",
+      "endTime": "10:00 PM",
+      "description": "A leisurely Sunday brunch paired with a curated selection of Wairarapa's finest wines. Perfect for a relaxed long lunch with friends and family.",
+      "image": "/images/uploads/drive-event.jpeg"
     }
   ]
 }
